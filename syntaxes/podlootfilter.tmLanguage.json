@@ -1,0 +1,88 @@
+{  
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "PoD Loot filter",
+   	"fileTypes": [".filter"],
+	"patterns": [
+		{ "include": "#keywords" },
+		{ "include": "#vcodes" },
+		{ "include": "#iprops" },
+		{ "include": "#comment" }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.podlootfilter",
+					"match": "(ItemDisplay)"
+				},
+				{
+					"name": "keyword.operator.word.podlootfilter",
+					"match": "\\b(AND|OR)\\b"
+				}
+			]
+		},
+		"vcodes": {
+			"patterns": [
+				{
+					"name": "constant.language.podlootfilter",
+					"match": "%(GREEN|DGREEN|GOLD|TAN|BLUE|GRAY|WHITE|BLACK|YELLOW|ORANGE|PURPLE|RED)%"
+				},
+				{
+					"name": "constant.numeric.integer.itemmeta.podlootfilter",
+					"match": "%(PRICE|ILVL|SOCKETS|CODE|NAME|CLVL|RUNENAME)%"
+				}
+			]
+		},
+		"iprops": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.itemtier.podlootfilter",
+					"match": "\\b(NORM|EXC|ELT)\\b"
+				},
+				{
+					"name": "constant.character.escape.itemquality.podlootfilter",
+					"match": "\\b(INF|SUP|MAG|RARE|SET|UNI|NMAG|ETH|RW)\\b"
+				},
+				{
+					"name": "constant.character.escape.classcodes.podlootfilter",
+					"match": "\\b(CL1|CL2|CL3|CL4|CL5|CL6|CL7)\\b"
+				},
+				{
+					"name": "constant.character.escape.weapongroups.podlootfilter",
+					"match": "\\b(WEAPON|WP1|WP2|WP3|WP4|WP5|WP6|WP7|WP8|WP9|WP10|WP11|WP12|WP13)\\b"
+				},
+				{
+					"name": "constant.character.escape.armorgroups.podlootfilter",
+					"match": "\\b(ARMOR|EQ1|EQ2|EQ3|EQ4|EQ5|EQ6|EQ7)\\b"
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"begin": "((//)(?:\\s*(?=\\s|$))?)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.podlootfilter"
+						},
+						"2": {
+							"name": "comment.line.double-slash.podlootfilter"
+						},
+						"3": {
+							"name": "punctuation.definition.comment.podlootfilter"
+						},
+						"4": {
+							"name": "storage.type.internaldeclaration.podlootfilter"
+						},
+						"5": {
+							"name": "punctuation.decorator.internaldeclaration.podlootfilter"
+						}
+					},
+					"end": "(?=^)",
+					"contentName": "comment.line.double-slash.podlootfilter"
+				}
+			]
+		}
+	},
+	"scopeName": "text.plain.podlootfilter"
+}

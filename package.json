@@ -1,0 +1,26 @@
+{
+    "name": "podlinter",
+    "displayName": "PoDLinter",
+    "description": "Lints lootfilter files for Path of Diablo",
+    "version": "0.0.1",
+    "publisher": "kotarou",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "podlootfilter",
+            "aliases": ["PoD Loot filter", "podlootfilter"],
+            "extensions": [".filter"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "podlootfilter",
+            "scopeName": "text.plain.podlootfilter",
+            "path": "./syntaxes/podlootfilter.tmLanguage.json"
+        }]
+    }
+}
